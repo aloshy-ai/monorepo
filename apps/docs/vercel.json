@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "cd ../.. && pnpm install && pnpm build",
+  "buildCommand": "cd ../.. && pnpm install && pnpm turbo run build --filter=docs...",
   "installCommand": "cd ../.. && pnpm install",
   "outputDirectory": ".next"
 }
