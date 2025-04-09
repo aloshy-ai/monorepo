@@ -1,0 +1,19 @@
+{
+    "extends": "../../tsconfig.json",
+    "compilerOptions": {
+        "outDir": "./dist",
+        "rootDir": "./lib",
+        "declaration": true,
+        "jsx": "react-jsx",
+        "noEmit": false,
+        "module": "commonjs",
+        "moduleResolution": "node"
+    },
+    "include": [
+        "lib/**/*"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
