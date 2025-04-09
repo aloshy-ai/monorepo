@@ -89,13 +89,3 @@ jobs:
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           working-directory: apps/website
           vercel-args: '--prod'
-
-      - name: Deploy Docs
-        uses: amondnet/vercel-action@v25
-        env:
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          working-directory: apps/docs
-          vercel-args: '--prod' 
