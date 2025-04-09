@@ -5,6 +5,10 @@ node_modules
 
 # testing
 coverage
+.coverage
+test-results
+playwright-report
+.nyc_output
 
 # next.js
 .next/
@@ -12,9 +16,16 @@ out/
 build
 dist
 
+# production
+build
+dist
+*.tsbuildinfo
+
 # misc
 .DS_Store
 *.pem
+.env*
+!.env.example
 
 # debug
 npm-debug.log*
@@ -33,5 +44,10 @@ yarn-error.log*
 .turbo
 
 # vercel
-.vercel 
 .vercel
+
+# IDE
+.idea
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json

@@ -5,10 +5,11 @@
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "scripts": {
-    "lint": "eslint .",
+    "lint": "eslint \"lib/**/*.{ts,tsx}\"",
     "type-check": "tsc --noEmit",
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "clean": "rm -rf .turbo node_modules dist"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.0.2",
