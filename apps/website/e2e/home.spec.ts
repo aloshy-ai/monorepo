@@ -4,8 +4,16 @@ test.describe('Home Page', () => {
   test('should display welcome message', async ({ page }) => {
     await page.goto('http://localhost:3000')
     
-    await expect(page.getByRole('heading', { name: 'Welcome to Aloshy AI' })).toBeVisible()
-    await expect(page.getByText('Your next-generation AI platform')).toBeVisible()
+    await expect(
+      page.getByRole('heading', { name: /Monetize your data securely/i }),
+    ).toBeVisible()
+  })
+
+  test('should have Get Started button', async ({ page }) => {
+    await page.goto('http://localhost:3000')
+    
+    const getStartedButton = page.getByRole('button', { name: 'Get Started' })
+    await expect(getStartedButton).toBeVisible()
   })
 
   test('should navigate to documentation', async ({ page }) => {
