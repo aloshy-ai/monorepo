@@ -8,10 +8,6 @@ on:
     types:
       - completed
 
-env:
-  TURBO_TOKEN: ${{ secrets.VERCEL_TOKEN }}
-  TURBO_TEAM: ${{ secrets.VERCEL_ORG_ID }}
-
 jobs:
   deploy-monorepo:
     runs-on: ubuntu-latest
@@ -34,25 +30,4 @@ jobs:
         run: pnpm install
 
       - name: Build affected apps
-        run: pnpm turbo build --filter=...[main]
-
-      - name: Install Vercel CLI
-        run: pnpm add -g vercel@latest
-
-      - name: Deploy Website
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_WEBSITE }}
-        run: |
-          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
-        working-directory: ./apps/website
-
-      - name: Deploy Docs
-        env:
-          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
-        run: |
-          vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-          vercel deploy --prod --token=${{ secrets.VERCEL_TOKEN }}
-        working-directory: ./apps/docs 
+        run: pnpm turbo build --filter=...[main] 
