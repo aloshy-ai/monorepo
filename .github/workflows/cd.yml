@@ -38,10 +38,11 @@ jobs:
 
       - name: Deploy Website to Vercel
         uses: amondnet/vercel-action@v25
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_WEBSITE }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_WEBSITE }}
           working-directory: ./apps/website
           alias-domains: |
             aloshy.ai
@@ -49,10 +50,11 @@ jobs:
 
       - name: Deploy Docs to Vercel
         uses: amondnet/vercel-action@v25
+        env:
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID_DOCS }}
           working-directory: ./apps/docs
           alias-domains: |
             docs.aloshy.ai 
