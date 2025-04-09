@@ -1,9 +1,11 @@
 # Aloshy AI Monorepo
 
-This monorepo contains the following packages:
+[![CD](https://github.com/aloshy-ai/monorepo/actions/workflows/cd.yml/badge.svg)](https://github.com/aloshy-ai/monorepo/actions/workflows/cd.yml)
 
-- `apps/website`: Main website application
-- `apps/docs`: Documentation website
+This monorepo contains the following applications:
+
+- `apps/website`: Main website application (https://aloshy.ai)
+- `apps/docs`: Documentation website (https://docs.aloshy.ai)
 
 ## Prerequisites
 
