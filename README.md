@@ -1,1 +1,1 @@
-# Aloshy AI Monorepo
+# aloshy.🅰🅸 Monorepo
