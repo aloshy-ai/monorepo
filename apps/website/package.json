@@ -8,16 +8,22 @@
     "start": "next start",
     "lint": "next lint",
     "clean": "rm -rf .next .turbo node_modules",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "test:unit": "jest src/",
-    "test:e2e": "playwright test"
+    "test": "jest --passWithNoTests --testPathIgnorePatterns=e2e",
+    "test:watch": "jest --watch --testPathIgnorePatterns=e2e",
+    "test:unit": "jest src/ --testPathIgnorePatterns=e2e",
+    "test:e2e": "playwright test",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "@aloshy/ui": "workspace:*",
+    "@tabler/icons-react": "^3.31.0",
+    "babel-jest": "^29.7.0",
+    "clsx": "^2.1.0",
+    "framer-motion": "^11.18.2",
     "next": "15.2.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
     "@types/node": "^20.11.28",
