@@ -1,6 +1,6 @@
 {
   "framework": "nextjs",
-  "buildCommand": "pnpm build",
-  "installCommand": "pnpm install",
-  "domains": ["docs.aloshy.ai"]
+  "buildCommand": "cd ../.. && pnpm install && pnpm build",
+  "installCommand": "cd ../.. && pnpm install",
+  "outputDirectory": ".next"
 }
